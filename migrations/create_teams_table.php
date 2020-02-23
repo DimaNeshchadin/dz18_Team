@@ -14,8 +14,9 @@ Capsule::schema()->create('teams', function ($table){
     $table->string('facebook', 255);
     $table->string('twitter', 255);
     $table->string('google', 255);
-    $table->dateTime('deleted_at')->nullable($value = true);
     $table->timestamps();
+    $table->softDeletes('deleted_at');
+
 });
 
 $data = [
